@@ -36,10 +36,6 @@ app.get('/userProfile', function(req, res, next){
     res.status(200).render('userProfile');
 })
 
-app.get('/friendProfile, function(req, res, next){
-    res.status(200).render('friendProfile');
-})
-
 app.use(function(req,res){
   res.status(404);
   res.render('404');
