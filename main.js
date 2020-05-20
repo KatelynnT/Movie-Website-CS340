@@ -24,6 +24,10 @@ app.get('/login', function(req, res, next){
     res.status(200).render('login');
 })
 
+app.get('/admin', function(req, res, next){
+    res.status(200).render('admin');
+})
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
