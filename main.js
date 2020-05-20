@@ -28,6 +28,10 @@ app.get('/signup', function(req, res, next){
     res.status(200).render('signup');
 })
 
+app.get('/search', function(req, res, next){
+    res.status(200).render('search');
+})
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
