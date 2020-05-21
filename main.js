@@ -48,6 +48,10 @@ app.get('/post', function(req, res, next){
     res.status(200).render('post');
 })
 
+app.get('/media', function(req, res, next){
+    res.status(200).render('media');
+})
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
