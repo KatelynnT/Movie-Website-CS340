@@ -5,7 +5,8 @@
 	<link rel="stylesheet" href="/signup.css" media="screen">
 	<link rel="stylesheet" href="/login.css" media="screen">
 	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <style>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+   <style>
 	body{
 			background-color: white;	
 		}
@@ -98,6 +99,8 @@
 			font-family: 'Abril Fatface', cursive;
 			position: relative;
 			bottom: 60px;
+			display: flex;
+                        flex-wrap: wrap;
 		}
 
 		#signup-text{
@@ -179,16 +182,48 @@
 			text-decoration: none;
 		}	
 
+		#navbar a:hover{
+			cursor: pointer;
+			color: black;
+			background-color: white;
+		}
+
+		#navbar a:visited{
+			text-decoration: underlined;
+		}
+
 		#search-header{
 			font-family: 'Abril Fatface', cursive;
 			font-size: 35px;
 			text-align: center;
 		}
 
-		.search-container{
-			height: 30px;
-			width: 500px;
-		}	
+		#search-container{
+			width: 1000px;
+			margin: 0 auto;	
+		}
+
+		#searchbar{
+			height: 25px;
+			width: 1000px;
+			font-size: 25px;
+		}
+			
+		#searchbtn{
+			position: relative;
+			bottom: 30px;
+			left: 1030px;
+			font-size: 18px;
+			height: 35px;
+			width: 35px;
+			border-radius: 50%;
+		}
+		
+		#searchbtn:hover{
+			cursor: pointer;
+			background-color: black;
+			color: white;
+		}
 	</style>
 </head>
 <body>
