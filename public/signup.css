@@ -1,3 +1,25 @@
+body{
+	background-color: white;
+}
+
+#signup-holder{
+	background-color: #990000;
+	font-family: 'Abril Fatface', cursive;
+	position: relative;
+	bottom: 60px;
+}
+
+#signup-text{
+	width: 1400px;
+	height: 900px;
+	justify-content: center;
+	position: relative;
+	left: 135px;
+	text-align: center;
+	background-image: url('https://media1.thehungryjpeg.com/thumbs2/ori_3486159_2b11949691043693ed746d441450d7be2a1b6bf7_movie-premiere-event-at-cine-theatre-cinema-white-blank-screen-at-mov.jpg');
+}
+
+
 #signup-header{
 	font-size: 100px;
 }

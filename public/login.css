@@ -4,14 +4,18 @@
 		#login-holder{
 			background-color: #990000;
 			font-family: 'Abril Fatface', cursive;	
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+        		bottom: 60px;
 		}
 		#login-text{
 			width: 1300px;
-			height: 900px;
+			height: 1000px;
 			background-image: url('https://cdn.britannica.com/61/118661-050-6CAD9A11/Popcorn.jpg');
 			justify-content: center;
 			position: relative;
-			left: 120px;	
+			left: 170px;	
 			text-align: center;
 		}
 		#login-form{
