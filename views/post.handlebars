@@ -1,15 +1,21 @@
-<main id="main-holder">
-    <h1 id="post-header">Post New Review</h1>
-
+<main id="post-holder">
+  <h1 id="post-title">Kernel</h1> 
+<div id="all-post">
 <section class="post-review">
-  <div class="Movie/Show">
-    Movie/Show: {{Movie/Show}}
-    <input type="text" name="Movie/Show" id="media-field" class="post-form-field" placeholder="Enter a Movie/Show">
+  <h2 id="post-header">Post New Review</h2>
+   <div class="Movie/Show">
+    
+    <h3 id="movie-show">Movie/Show: </h3>
+	{{Movie/Show}}
+    <input type="text" name="Movie/Show" id="post-media-field" class="post-form-field" placeholder="Enter a Movie/Show">
   </div>
   <div class="WriteReview">
-    Write a Review: {{WriteReview}}
-    <input type="password" name="WriteReview" id="review-field" class="post-form-field" placeholder="Write Your Review">
+    
+    <h3 id="review-write">Write a Review: </h3>
+	{{WriteReview}}
+    <input type="password" name="WriteReview" id="post-review-field" class="post-form-field" placeholder="Write Your Review">
   </div>
+  <input type="submit" value="Post" id="post-form-submit">
 </section>
-<input type="submit" value="Post" id="post-form-submit">
-  </main>
+</div>  
+</main>
