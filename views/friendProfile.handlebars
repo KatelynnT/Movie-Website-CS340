@@ -1,8 +1,19 @@
-<main>
-  <h1>Friend Profile</h1>
-  <h2>Username:</h2>
-  <div class="reviewFriend">
-        <p> Movie/TV Show Title: </p>
-        <p> Review: </p>
-  </div>
+<main id = "friend-holder">
+  <h1 id="site-title"> Kernel</h1>
+   <div id="navbar">
+        <a href="/userProfile"> Your Profile</a>
+        <a href="/search">Search</a>
+   </div>
+
+  <div id = "all-friend">
+        <h2 id= "friend-header"> Friend's Username Goes Here</h2>
+        <div id = "review-div">
+                <h3 id = "add-review-header"> Review # </h3>
+                <form id = "add-review-form">
+                        <input type="text" name="review-title" id="review-title-field" class="add-review-form-field" placeholder = "Review Title">
+                        <input type="text" name="media-title" id="media-title-field" class="add-review-form-field" placeholder = "Movie/Show Title">
+                        <input type="text" name="review-body" id="review-body-field" class="add-review-form-field" placeholder = "Review Content">
+                </form>
+        </div>
+  </div>
 </main>
