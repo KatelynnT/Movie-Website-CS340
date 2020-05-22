@@ -1,10 +1,26 @@
-<main>
-  <h1>Your Profile</h1>
-  <h2>Username:</h2>
-  <div class="reviewBox">
- 	<p> Movie/TV Show Title: </p>
-	<button type="button" class="reviewEdit"> Edit</button>
-	<button type="button" class="reivewDelete"> x </button>
-	<p> Review: </p>
-	<button type="button" class="reviewAdd"> Post Review </button>
+<main id = "user-holder">
+  <h1 id="site-title"> Kernel</h1>
+   <div id="navbar">
+        <a href="/userProfile"> Your Profile</a>
+        <a href="/search">Search</a>
+   </div>
+
+  <div id = "all-user">
+        <h2 id= "profile-header"> Username Goes Here</h2>
+        <div id = "review-div">
+                <h3 id = "add-review-header"> Review # </h3>
+                <form id = "add-review-form">
+                        <input type="text" name="review-title" id="review-title-field" class="add-review-form-field" placeholder = "Review Title">
+                        <input type="text" name="media-title" id="media-title-field" class="add-review-form-field" placeholder = "Movie/Show Title">
+                        <input type="text" name="review-body" id="review-body-field" class="add-review-form-field" placeholder = "Review Content">
+                </form>
+                <div class = "edit-icon">
+                        <i class="fas fa-edit"></i>
+                </div>
+                <div class = "delete-icon">
+                        <i class="fas fa-trash-alt"></i>
+                </div>
+        </div>
+  </div>
+  <button type="button" id="create-review-button"><i class="fas fa-plus-circle"></i></button>
 </main>
