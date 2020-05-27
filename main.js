@@ -1,6 +1,6 @@
 var express = require('express');
 var mysql = require('./dbcon.js');
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 var app = express();
 var handlebars = require('express-handlebars').create({
@@ -8,12 +8,15 @@ var handlebars = require('express-handlebars').create({
         });
 
 app.engine('handlebars', handlebars.engine);
-//app.use(bodyParser.urlencoded({extended:true}));
-//app.use('/static', express.static('public'));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
-//app.set('mysql', mysql);
-//app.use('/', express.static('public'));
+app.set('mysql', mysql);
+app.use('/', express.static('public'));
+app.use('/admin', require('./admin.js'));
+app.use('/media', require('./media.js'));
+
 
 app.get('/', function(req, res, next){
     res.status(200).render('index');
@@ -24,9 +27,6 @@ app.get('/login', function(req, res, next){
     res.status(200).render('login');
 })
 
-app.get('/admin', function(req, res, next){
-    res.status(200).render('admin');
-})
 
 app.get('/signup', function(req, res, next){
     res.status(200).render('signup');
@@ -48,9 +48,6 @@ app.get('/post', function(req, res, next){
     res.status(200).render('post');
 })
 
-app.get('/media', function(req, res, next){
-    res.status(200).render('media');
-})
 
 app.use(function(req,res){
   res.status(404);

@@ -248,15 +248,22 @@
 			left: 50px;
 			opacity: 0.8;
 		}
+		#tv-div-container{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
 		#tv-div{
 			background-color: white;
                         border: 5px solid #990000;
                         width: 600px;
                         height: 400px;
-                        position: relative;
-                        bottom: 390px;
-			left: 730px;
 			opacity: 0.8;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+                        align-items: center;
 		}
 		#admin-header{
 			text-align: center;
@@ -278,69 +285,60 @@
 		}
 		#add-tv-show-header{
 			font-size: 25px;
-                        position: relative;
 			text-align: center;
 			font-family: 'Abril Fatface', cursive;
 		}
 		#movie-title-field{
 			font-size: 25px;
-			position: relative;
-			left: 30px;
 			height: 30px;
 			width: 500px;
+			margin-bottom: 20px;
 		}
 		#tv-title-field{
 			font-size: 25px;
-			position: relative;
-                        left: 30px;
 			height: 30px;
                         width: 500px;
+			margin-bottom: 20px;
 		}
+	
 		#movie-summary-field{
 			font-size: 25px;
-                        position: relative;
-                        left: 30px;
                         height: 30px;
                         width: 500px;
-			top: 20px;
+			margin-bottom: 20px;
 		}
 		#add-movie-form-submit{
 			width: 100px;
 			height: 30px;
-			position: relative;
-			top: 210px;
-			left: 470px;
 		}	
   		#tv-seasons-field{
 			font-size: 25px;
-                        position: relative;
-                        left: 30px;
                         height: 30px;
                         width: 500px;
-			top: 20px;
+			margin-bottom: 20px;
 		} 
 		#tv-episodes-field{
 			font-size: 25px;
-                        position: relative;
-                        left: 30px;
                         height: 30px;
                         width: 500px;
-                        top: 40px;
+			margin-bottom: 20px;
 		}
 		#tv-summary-field{
 			font-size: 25px;
-                        position: relative;
-                        left: 30px;
                         height: 30px;
                         width: 500px;
-                        top: 60px;
+			margin-bottom: 20px;
 		}
+		#img_url-field{
+                        font-size: 25px;
+                        height: 30px;
+                        width: 500px;
+			margin-bottom: 20px;
+                }
+
 		#add-tv-form-submit{
 			width: 100px;
                         height: 30px;
-                        position: relative;
-                        top: 140px;
-			left: 470px;
 		}
 		#add-tv-form-submit:hover{
 			background-color: gray;
@@ -517,7 +515,9 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                }
+			flex-wrap: wrap;
+                	align-content: space-between;
+		}
                 #movie-header{
                         color: white;
                         background-color: #990000;
@@ -591,7 +591,21 @@
                 }
                 #media-img{
                         height: 400px;
+		}
+		#title-text{
+			font-family: 'Abril Fatface', cursive;
+			font-size: 20px;
+			text-decoration: underline;
+			
+		}
+		#summary-text{
+			font-family: 'Abril Fatface', cursive;
+                        font-size: 16px;
+			word-wrap: break-word;
+			width: 250px;
+			text-align: center;
                 }
+
   </style>
 </head>
 <body>
