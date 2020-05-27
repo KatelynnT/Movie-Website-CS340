@@ -16,7 +16,7 @@ app.set('mysql', mysql);
 app.use('/', express.static('public'));
 app.use('/admin', require('./admin.js'));
 app.use('/media', require('./media.js'));
-
+app.use('/signup', require('./signup.js'));
 
 app.get('/', function(req, res, next){
     res.status(200).render('index');
@@ -27,10 +27,6 @@ app.get('/login', function(req, res, next){
     res.status(200).render('login');
 })
 
-
-app.get('/signup', function(req, res, next){
-    res.status(200).render('signup');
-})
 
 app.get('/search', function(req, res, next){
     res.status(200).render('search');
