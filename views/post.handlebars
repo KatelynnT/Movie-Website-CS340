@@ -1,21 +1,42 @@
 <main id="post-holder">
-  <h1 id="post-title">Kernel</h1> 
+<div id="post-nav">
+  <h1 id="site-title"> Kernel</h1>
+   <div id="navbar">
+        <a href="/userProfile"> Reviews</a>
+        <a href="/search">Search</a>
+        <a href="/media">All Media</a>
+    </div>
+</div>
 <div id="all-post">
 <section class="post-review">
+<form id="addReview" action="/post" method="post">
   <h2 id="post-header">Post New Review</h2>
-   <div class="Movie/Show">
+  <div class="RevTitle">
+    <h3 id="rev-title">Review Title: </h3>
+        {{RevTitle}}
+   <input type="text" name="ReviewTitle" id="post-title-field" class="post-form-field" placeholder="Review Title">
+ </div>
+  <div class="Movie/Show">
     
     <h3 id="movie-show">Movie/Show: </h3>
-	{{Movie/Show}}
+        {{Movie/Show}}
     <input type="text" name="Movie/Show" id="post-media-field" class="post-form-field" placeholder="Enter a Movie/Show">
   </div>
   <div class="WriteReview">
     
     <h3 id="review-write">Write a Review: </h3>
-	{{WriteReview}}
-    <input type="password" name="WriteReview" id="post-review-field" class="post-form-field" placeholder="Write Your Review">
-  </div>
-  <input type="submit" value="Post" id="post-form-submit">
+        {{WriteReview}}
+    <input type="text" name="WriteReview" id="post-review-field" class="post-form-field" placeholder="Write Your Review">
+  
+   </div>
+  <div class="ReviewAuthor">
+        <h3 id="rev-author">Author: </h3>
+        {{ReviewAuthor}}
+        <input type="text" name="ReviewAuthor" id="post-author-field" class="post-form-field" placeholder="Author">
+  </div>
+
+ <input type="submit" value="Post" id="post-form-submit">
+</form>
 </section>
 </div>  
 </main>
