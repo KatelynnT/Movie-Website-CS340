@@ -37,8 +37,8 @@ app.get('/friendProfile', function(req, res, next){
     res.status(200).render('friendProfile');
 })
 
-app.get('/post', function(req, res, next){
-    res.status(200).render('post');
+app.get('/posts', function(req, res, next){
+    res.status(200).render('posts');
 })
 
 
