@@ -8,9 +8,10 @@
     <h2 id="search-header">Search for Films, Shows and Other Users Here</h2>
 
 	<div id="search-container">
-    		<form id="search-form">
-      			<input type="text" id="searchbar" placeholder="Search.." name="search">
-      			<button type="submit" id="searchbtn"><i class="fas fa-search"></i></button>
+    		<form id="search-form" action='' method=''>
+      			<input type="text" id="title_search_string" class="searchbar" placeholder="Search.." name="title_search_string">
+		<input type="button" id="searchbtn" class="input-field" value="Search" onclick="searchByTitle()">
     		</form>
   	</div>
+
   </main>

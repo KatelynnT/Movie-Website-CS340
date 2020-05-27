@@ -6,7 +6,10 @@
 	<link rel="stylesheet" href="/login.css" media="screen">
 	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-   <style>
+	{{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}  
+ <style>
 	body{
 			background-color: white;	
 		}
@@ -205,9 +208,18 @@
 			width: 1000px;
 			margin: 0 auto;	
 		}
+		.input-icons i{
+                        position: absolute;
+                }
+		.input-icons{
+			width: 100%;
+		}
+		.input-field{
+			text-align: center;
+		}
 
-		#searchbar{
-			height: 25px;
+		.searchbar{
+			height: 35px;
 			width: 1000px;
 			font-size: 25px;
 		}
@@ -218,8 +230,8 @@
 			left: 1030px;
 			font-size: 18px;
 			height: 35px;
-			width: 35px;
-			border-radius: 50%;
+			width: 80px;
+			text-align: center;
 		}
 		
 		#searchbtn:hover{

@@ -17,6 +17,8 @@ app.use('/', express.static('public'));
 app.use('/admin', require('./admin.js'));
 app.use('/media', require('./media.js'));
 app.use('/signup', require('./signup.js'));
+app.use('/search', require('./search.js'));
+
 
 app.get('/', function(req, res, next){
     res.status(200).render('index');
@@ -25,11 +27,6 @@ app.get('/', function(req, res, next){
 
 app.get('/login', function(req, res, next){
     res.status(200).render('login');
-})
-
-
-app.get('/search', function(req, res, next){
-    res.status(200).render('search');
 })
 
 app.get('/userProfile', function(req, res, next){
