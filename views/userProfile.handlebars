@@ -6,15 +6,16 @@
 	<a href="/media">All Media</a>  
  </div>
 
-{{#each userProfile}}
   <div id = "all-user">
         <h2 id= "profile-header"> Reviews: </h2>
+	{{#each userProfile}}
 	<div id = "review-div">
-                <h3 id = "add-review-header"> Review # </h3>
+		<h3 id = "add-review-title"> Review Title: </h3>
 		<p id ="review-title-field">{{review_title}}</p>
+		<h3 id = "add-review-media"> Movie/Tv Show: </h3>
 		<p id ="media-title-field">{{review_movie_tv}}</p>
+		<h3 id = "add-review-body"> Review: </h3>
 		<p id ="review-body-field">{{review_body}}</p>
-		<p id ="review-author-field">{{review_author}}</p>
                 <div class = "edit-icon">
                         <i class="fas fa-edit"></i>
                 </div>
@@ -22,7 +23,7 @@
                         <i class="fas fa-trash-alt"></i>
                 </div>
         </div>
+	{{/each}}
   </div>
-{{/each}}
   <button type="button" id="create-review-button"><a href="/posts" <i class="fas fa-plus-circle"></i></a></button>
 </main>

@@ -3,7 +3,7 @@ module.exports = function(){
     var router = express.Router();
 
     function getReview(res, mysql, context, complete){
-        mysql.pool.query("SELECT  review_title, review_body FROM review", function(error, results, fields){
+        mysql.pool.query("SELECT review_movie_tv, review_title, review_body FROM review", function(error, results, fields){
             if(error){
                 res.write(JSON.stringify(error));
                 res.end();
