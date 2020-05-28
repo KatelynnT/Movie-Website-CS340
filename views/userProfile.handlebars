@@ -6,15 +6,15 @@
 	<a href="/media">All Media</a>  
  </div>
 
+{{#each userProfile}}
   <div id = "all-user">
         <h2 id= "profile-header"> Reviews: </h2>
-        <div id = "review-div">
+	<div id = "review-div">
                 <h3 id = "add-review-header"> Review # </h3>
-                <form id = "add-review-form">
-                        <input type="text" name="review-title" id="review-title-field" class="add-review-form-field" placeholder = "Review Title">
-                        <input type="text" name="media-title" id="media-title-field" class="add-review-form-field" placeholder = "Movie/Show Title">
-                        <input type="text" name="review-body" id="review-body-field" class="add-review-form-field" placeholder = "Review Content">
-                </form>
+		<p id ="review-title-field">{{review_title}}</p>
+		<p id ="media-title-field">{{review_movie_tv}}</p>
+		<p id ="review-body-field">{{review_body}}</p>
+		<p id ="review-author-field">{{review_author}}</p>
                 <div class = "edit-icon">
                         <i class="fas fa-edit"></i>
                 </div>
@@ -23,5 +23,6 @@
                 </div>
         </div>
   </div>
+{{/each}}
   <button type="button" id="create-review-button"><a href="/posts" <i class="fas fa-plus-circle"></i></a></button>
 </main>

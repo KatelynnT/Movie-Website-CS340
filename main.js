@@ -18,7 +18,8 @@ app.use('/admin', require('./admin.js'));
 app.use('/media', require('./media.js'));
 app.use('/signup', require('./signup.js'));
 app.use('/search', require('./search.js'));
-
+app.use('/posts', require('./posts.js'));
+app.use('/userProfile', require('./userProfile.js'));
 
 app.get('/', function(req, res, next){
     res.status(200).render('index');
@@ -27,18 +28,6 @@ app.get('/', function(req, res, next){
 
 app.get('/login', function(req, res, next){
     res.status(200).render('login');
-})
-
-app.get('/userProfile', function(req, res, next){
-    res.status(200).render('userProfile');
-})
-
-app.get('/friendProfile', function(req, res, next){
-    res.status(200).render('friendProfile');
-})
-
-app.get('/posts', function(req, res, next){
-    res.status(200).render('posts');
 })
 
 
