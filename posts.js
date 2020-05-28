@@ -40,7 +40,7 @@ router.post('/', function(req, res){
                 res.write(JSON.stringify(error));
                 res.end();
             }else{
-                res.redirect('/posts');
+                res.redirect('/userProfile');
             }
         });
     });
