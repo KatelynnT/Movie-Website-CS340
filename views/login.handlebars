@@ -1,6 +1,6 @@
 <main id="login-holder">
    <div id="login-text">
-    <form id="login-form">
+    <form id="login-form" action="/login" method="post">
       <h1 id="login-title">Kernel</h1>
       <h2 id="login-header">Login</h2>
       <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
@@ -10,6 +10,32 @@
     <a  href = "/signup" class = "buttonlog">Sign Up</a> 
    </form>
    </div>
+
+<div id="modal-backdrop" class="hidden"></div>
+    <div id="open-modal" class="hidden">
+      <div class="modal-text">
+
+        <div class="modal-header">
+          <h3>Cookies and Clubs</h3>
+        <button type="button" id="modal-close-button">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="when">
+              When: September 23rd
+          </div>
+          <div class="where">
+            Where: Kelley Engineering Courtyard
+          </div>
+          <div class="what">
+              What: Get to know us and check out other engineering clubs to get
+              involved in!
+          </div>
+        </div>
+    </div>
+  </div>
+
+
   </main>
 
 
