@@ -20,14 +20,14 @@ app.use('/signup', require('./signup.js'));
 app.use('/search', require('./search.js'));
 app.use('/posts', require('./posts.js'));
 app.use('/userProfile', require('./userProfile.js'));
+app.use('/login', require('./login.js'));
 
 app.get('/', function(req, res, next){
     res.status(200).render('index');
 })
 
-
-app.get('/login', function(req, res, next){
-    res.status(200).render('login');
+app.get('/login_error', function(req, res, next){
+    res.status(200).render('login_error');
 })
 
 
