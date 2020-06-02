@@ -75,7 +75,7 @@ router.put('/:id', function(req, res){
     });
 
 function getReviewFromTitle(req, res, mysql, context, complete) {
-var query = "SELECT review_movie_tv, review_title, review_body FROM review  WHERE review.review_movie_tv LIKE " + mysql.pool.escape(req.params.s);
+var query = "SELECT review_id as id, review_movie_tv, review_title, review_body FROM review  WHERE review.review_movie_tv LIKE " + mysql.pool.escape(req.params.s);
       console.log(query)
 
       mysql.pool.query(query, function(error, results, fields){
