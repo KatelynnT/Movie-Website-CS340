@@ -1,6 +1,6 @@
 function updateMedia(id){
 $.ajax({
-        url: '/media/' + id,
+        url: '/admin/' + id,
         type: 'PUT',
         data: $('#update-media').serialize(),
         success: function(result){

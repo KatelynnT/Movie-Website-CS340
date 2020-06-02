@@ -31,11 +31,11 @@ router.get('/:id', function(req, res){
         var context = {};
         context.jsscripts = [ "updatemedia.js"];
         var mysql = req.app.get('mysql');
-        getSingleReview(res, mysql, context, req.params.id, complete);
+        getSingleMedia(res, mysql, context, req.params.id, complete);
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){
-                res.render('update-media', context);
+                res.render('update-admin', context);
             }
 
         }
