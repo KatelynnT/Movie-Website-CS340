@@ -6,10 +6,6 @@
 	<link rel="stylesheet" href="/login.css" media="screen">
 	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	{{#each jsscripts}}
-    <script src="/static/{{this}}"></script>
-    {{/each}}  
  <style>
 	body{
 			background-color: white;	
@@ -679,5 +675,9 @@
 </head>
 <body>
         {{{body}}}
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}  
 </body>
 </html>
