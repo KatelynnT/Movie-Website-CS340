@@ -44,11 +44,26 @@ router.post('/', function(req, res){
             }else if(results == 0){
 		console.log("No user exists")
 		res.redirect('/login_error')
-	    }else{ 
+	    }else{
+		console.log("Made it here :)")
+		query = "SELECT user_id as id FROM users WHERE users.password LIKE " + mysql.pool.escape(req.body.password);
+        console.log(query)
+
+        sql = mysql.pool.query(query, function(error, results, fields){
+            if(error){
+                console.log(JSON.stringify(error))
+                res.write(JSON.stringify(error));
+                res.end();
+ 	    }else if(results == 0){
+                console.log("No user exists")
+                res.redirect('/login_error')
+	    }else{
 		console.log("LOGIN SUCCESSFUL!")
 		console.log(results)
                 res.redirect('/media');
             }
+	});
+	}
         });
     });
 
