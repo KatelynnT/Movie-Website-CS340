@@ -92,7 +92,7 @@ router.post('/', function(req, res){
 
 router.delete('/:id', function(req, res){
         var mysql = req.app.get('mysql');
-        var sql = "DELETE FROM visual_media WHERE vm_id = ?";
+        var sql = "DELETE FROM posts WHERE vid = ?";
         var inserts = [req.params.id];
         sql = mysql.pool.query(sql, inserts, function(error, results, fields){
             if(error){
@@ -101,10 +101,45 @@ router.delete('/:id', function(req, res){
                 res.status(400);
                 res.end();
             }else{
-                res.status(202).end();
-            }
-        })
-    })
+		sql="DELETE FROM searches_for WHERE vid= ?";
+		inserts = [req.params.id];
+	        sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+        	    if(error){
+                	console.log(error)
+               		 res.write(JSON.stringify(error));
+                	 res.status(400);
+                	 res.end();
+		    }else{
+			sql="DELETE FROM review WHERE vid= ?";
+	                inserts = [req.params.id];
+        	        sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+                        if(error){
+                     	    console.log(error)
+                       	    res.write(JSON.stringify(error));
+                            res.status(400);
+                            res.end();
+			}
+			else{
+				sql="DELETE FROM visual_media WHERE vm_id= ?";
+				inserts = [req.params.id];
+				sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+				if(error){
+                        	    console.log(error)
+                        	    res.write(JSON.stringify(error));
+                        	    res.status(400);
+                        	    res.end();
+                        	}
+				else{
+					res.status(202).end();
+				}
+				});	
+			}
+			});
+		    }
+		});
+	  }
+        });
+    });
 return router;
 }();
 
