@@ -1,0 +1,29 @@
+<html>
+<main id="main-holder">
+  <h1 id="site-title"> Kernel</h1>
+   <div id="navbar">
+	<a href="/userProfile">Reviews</a>
+	<a href="/search">Search</a>
+	<a href="/media">All Media</a>
+   </div>
+<div id="all-review">
+<section class="post-review">
+<form id="update-review" action="" method="">
+<h2 id="post-header">Update Review</h2>
+<div class="RevTitle">
+<h3 id="rev-title">Review Title: </h3>
+	<input type="text" name="review_title" id="post-title-field" class="post-form-field"  value="{{userProfile.review_title}}">
+</div>
+<div class="Movie/Show">
+<h3 id="movie-show">Movie/TV Show: </h3>
+	<input type="text" name="review_movie_tv" id="post-media-field" class="post-form-field" value="{{userProfile.review_movie_tv}}">
+</div>
+<div class="WriteReview">
+<h3 id="review-write">Write a Review: : </h3>
+<input type="text" name="review_body" id="post-review-field" class="post-form-field"  value="{{userProfile.review_body}}">
+</div>
+        <input type="submit" value="Update" id="post-form-submit" onclick="updateReview({{userProfile.id}})">
+</form>
+</section>
+</div>
+</html>
