@@ -19,6 +19,7 @@ app.use('/media', require('./media.js'));
 app.use('/signup', require('./signup.js'));
 app.use('/search', require('./search.js'));
 app.use('/posts', require('./posts.js'));
+app.use('/admin-login', require('./admin-login.js'));
 app.use('/userProfile', require('./userProfile.js'));
 app.use('/login', require('./login.js'));
 
@@ -30,6 +31,9 @@ app.get('/login_error', function(req, res, next){
     res.status(200).render('login_error');
 })
 
+app.get('/admin_login_error', function(req, res, next){
+    res.status(200).render('admin_login_error');
+})
 
 app.use(function(req,res){
   res.status(404);
