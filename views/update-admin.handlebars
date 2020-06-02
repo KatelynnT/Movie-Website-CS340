@@ -1,0 +1,40 @@
+<html>
+<main id="main-holder">
+  <h1 id="site-title"> Kernel</h1>
+   <div id="navbar">
+	<a href="/userProfile">Reviews</a>
+	<a href="/search">Search</a>
+	<a href="/media">All Media</a>
+   </div>
+<div id="all-review">
+<section class="post-review">
+<form id="update-media" action="" method="">
+<h2 id="post-header">Update Media</h2>
+<div class="RevTitle">
+<h3 id="rev-title">Title: </h3>
+	<input type="text" name="vm_title" id="post-review-field" class="post-form-field" value="{{media.vm_title}}">
+</div>
+<div class="Movie/Show">
+<h3 id="movie-show">Number of Seasons: </h3>
+	<input type="number" name="seasons" id="post-review-field" class="post-form-field" value="{{media.seasons}}">
+</div>
+<div class="WriteReview">
+<h3 id="review-write">Number of Episodes: </h3>
+<input type="number" name="episodes" id="post-review-field" class="post-form-field"  value="{{media.episodes}}">
+
+</div>
+
+<div class="SummaryEnter">
+<h3 id="summary-enter">Summary: </h3>
+	<input type="text" name="summary" id="post-review-field" class="post-form-field" value="{{media.summary}}">
+</div>
+
+<div class="UrlEnter">
+<h3 id="url-enter">ImageUrl: </h3>
+	<input type="text" name="img_url" id="post-review-field" class="post-form-field" value="{{media.img_url}}">
+</div>
+        <input type="submit" value="Update" id="post-form-submit" onclick="updateMedia({{media.id}})">
+</form>
+</section>
+</div>
+</html>

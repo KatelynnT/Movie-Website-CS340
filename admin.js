@@ -13,7 +13,51 @@ module.exports = function(){
         });
     }
 
+  function getSingleMedia(res, mysql, context, id, complete){
+        var sql = "SELECT vm_id as id, vm_title, summary, episodes, seasons, img_url FROM visual_media WHERE vm_id = ?";
+        var inserts = [id];
+        mysql.pool.query(sql, inserts, function(error, results, fields){
+            if(error){
+                res.write(JSON.stringify(error));
+                res.end();
+            }
+            context.media = results[0];
+            complete();
+        });
+    }
 
+router.get('/:id', function(req, res){
+        callbackCount = 0;
+        var context = {};
+        context.jsscripts = [ "updatemedia.js"];
+        var mysql = req.app.get('mysql');
+        getSingleReview(res, mysql, context, req.params.id, complete);
+        function complete(){
+            callbackCount++;
+            if(callbackCount >= 1){
+                res.render('update-media', context);
+            }
+
+        }
+    });
+
+router.put('/:id', function(req, res){
+        var mysql = req.app.get('mysql');
+        console.log(req.body)
+        console.log(req.params.id)
+        var sql = "UPDATE visual_media SET vm_title=?, summary=?, episodes=?, seasons=?, img_url=? WHERE vm_id=?";
+	var inserts = [req.body.vm_title, req.body.summary, req.body.episodes, req.body.seasons, req.body.img_url, req.params.id];
+        sql = mysql.pool.query(sql,inserts,function(error, results, fields){
+            if(error){
+                console.log(error)
+                res.write(JSON.stringify(error));
+                res.end();
+            }else{
+                res.status(200);
+                res.end();
+            }
+        });
+    });
 router.get('/', function(req, res){
         var callbackCount = 0;
         var context = {};

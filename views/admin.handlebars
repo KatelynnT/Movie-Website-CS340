@@ -22,5 +22,19 @@
 </form>   
 </div>
 </div>
-   </div>
+<h3> Current Media:</h3>
+<table>
+	<thread>
+		<th> Media Title</th>
+	</thread>
+	<tbody>
+		{{#each media}}
+		<tr>
+			<td>{{vm_title}}</td>
+			<td><a href="/media/{{id}}">Update</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+</div>
  </main>
