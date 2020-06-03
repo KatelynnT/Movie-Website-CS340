@@ -3,8 +3,8 @@
     <form id="login-form" action="/login" method="post">
       <h1 id="login-title">Kernel</h1>
       <h2 id="login-header">Login</h2>
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="text" name="username" id="username-field" class="login-form-field" pattern=".{1.}" required placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" pattern=".{1.}" required placeholder="Password">
       <input type="submit" value="Login" id="login-form-submit">
     <h2 id="signuplink">Don't have an account? Make one here:</h2>
     <a  href = "/signup" class = "buttonlog">Sign Up</a>
@@ -16,4 +16,10 @@
 
   </main>
 
-
+<script>
+	document.getElementById("username-field").addEventListener("invalid", myFunction);
+	document.getElementById("password-field").addEventListener("invalid", myFunction);
+	function myFunction() {
+  		alert("Must at least contain input");
+	}
+</script>

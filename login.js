@@ -41,7 +41,7 @@ router.post('/', function(req, res){
                 console.log(JSON.stringify(error))
                 res.write(JSON.stringify(error));
                 res.end();
-            }else if(results == 0){
+            }else if(results == " "){
 		console.log("No user exists")
 		res.redirect('/login_error')
 	    }else{
