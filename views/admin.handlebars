@@ -21,10 +21,10 @@
       <input type="submit" value="Add Media" id="add-tv-form-submit">
 </form>   
 </div>
-</div>
 <div id = "media-table">
 <h3 id="current-title"> Current Media:</h3>
-<table>
+<table is="all-table">
+	<div id="media-updater">
 	<thread>
 		<th id="title-media"> Media Title</th>
 	</thread>
@@ -37,7 +37,9 @@
 		</tr>
 		{{/each}}
 	</tbody>
+	</div>
 </table>
+</div>
 </div>
 </div>
  </main>
