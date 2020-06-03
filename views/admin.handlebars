@@ -32,8 +32,8 @@
 		{{#each media}}
 		<tr>
 			<td id="name-media">{{vm_title}}</td>
-			<td><a href="/admin/{{id}}">Update</a></td>
-			<td><button onclick="deleteMedia({{id}})">Delete</button></td>
+			<td id="update-link"><a href="/admin/{{id}}">Update</a></td>
+			<td id="delete-link"><button onclick="deleteMedia({{id}})">Delete</button></td>
 		</tr>
 		{{/each}}
 	</tbody>
