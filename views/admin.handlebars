@@ -22,21 +22,23 @@
 </form>   
 </div>
 </div>
-<h3> Current Media:</h3>
+<div id = "media-table">
+<h3 id="current-title"> Current Media:</h3>
 <table>
 	<thread>
-		<th> Media Title</th>
+		<th id="title-media"> Media Title</th>
 	</thread>
 	<tbody>
 		{{#each media}}
 		<tr>
-			<td>{{vm_title}}</td>
+			<td id="name-media">{{vm_title}}</td>
 			<td><a href="/admin/{{id}}">Update</a></td>
 			<td><button onclick="deleteMedia({{id}})">Delete</button></td>
 		</tr>
 		{{/each}}
 	</tbody>
 </table>
+</div>
 </div>
  </main>
 <script>
