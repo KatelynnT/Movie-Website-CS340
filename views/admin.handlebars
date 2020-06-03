@@ -13,11 +13,11 @@
 <div id="tv-div">
 <h3 id="add-tv-show-header">Add Visual Media</h3>
 	<form id="addperson" action="/admin" method="post">
-<input type="text" name="vm_title" id="tv-title-field" class="add-tv-form-field" placeholder="Title">
-      <input type="number" name="seasons" id="tv-seasons-field" class="add-tv-form-field" placeholder="Number of Seasons">
-      <input type="number" name="episodes" id="tv-episodes-field" class="add-tv-form-field" placeholder="Number of Episodes">
-      <input type="text" name="summary" id="tv-summary-field" class="add-tv-form-field" placeholder="Summary">
-	<input type="text" name="img_url" id="img_url-field" class="add-tv-form-field" placeholder="Image URL">
+      <input type="text" name="vm_title" id="tv-title-field" class="add-tv-form-field" pattern=".{1.}" required placeholder="Title">
+      <input type="number" name="seasons" id="tv-seasons-field" class="add-tv-form-field" pattern=".{1.}" required placeholder="Number of Seasons">
+      <input type="number" name="episodes" id="tv-episodes-field" class="add-tv-form-field" pattern=".{1.}" required placeholder="Number of Episodes">
+      <input type="text" name="summary" id="tv-summary-field" class="add-tv-form-field" pattern=".{1.}" required placeholder="Summary">
+	<input type="text" name="img_url" id="img_url-field" class="add-tv-form-field" pattern=".{1.}" required placeholder="Image URL">
       <input type="submit" value="Add Media" id="add-tv-form-submit">
 </form>   
 </div>
@@ -42,6 +42,16 @@
 </div>
  </main>
 <script>
+	document.getElementById("tv-title-field").addEventListener("invalid", myFunction);
+	document.getElementById("tv-seasons-field").addEventListener("invalid", myFunction);
+	document.getElementById("tv-episodes-field").addEventListener("invalid", myFunction);
+	document.getElementById("tv-summary-field").addEventListener("invalid", myFunction);
+	document.getElementById("img_url-field").addEventListener("invalid", myFunction);
+
+	function myFunction() {
+  		alert("Must at least contain input");
+	}
+
 function deleteMedia(id){
     $.ajax({
         url: '/admin/' + id,
