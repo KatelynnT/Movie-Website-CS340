@@ -31,6 +31,10 @@ app.get('/login_error', function(req, res, next){
     res.status(200).render('login_error');
 })
 
+app.get('/search/media/', function(req, res, next){
+    res.status(200).render('search-error');
+})
+
 app.get('/admin_login_error', function(req, res, next){
     res.status(200).render('admin_login_error');
 })

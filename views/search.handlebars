@@ -10,15 +10,9 @@
 
 	<div id="search-container">
     		<form id="search-form" action='' method=''>
-      			<input type="text" id="title_search_string" class="searchbar" pattern=".{1,}" required placeholder="Search.." name="title_search-string">
+      			<input type="text" id="title_search_string" class="searchbar" pattern=".{1,}" required placeholder="Search.." name="title_search-string" onkeypress="handle(event)">
 		<input type="button" id="searchbtn" class="input-field" value="Search" onclick="searchByTitle()">
     		</form>
   	</div>
 </main>
 
-<script>
-	document.getElementById("title_search_string").addEventListener("invalid", myFunction);
-	function myFunction() {
-		alert("Must contain a search entry");
-	}
-</script>
