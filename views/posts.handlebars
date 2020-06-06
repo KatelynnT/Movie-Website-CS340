@@ -20,8 +20,14 @@
     
     <h3 id="movie-show">Movie/Show: </h3>
         {{Movie/Show}}
-    <input type="text" name="review_movie_tv" id="post-media-field" class="post-form-field" pattern=".{1.}" required placeholder="Enter a Movie/Show">
-  </div>
+
+	<select name="vid" id="post-media-field" class="post-form-field" pattern=".{1.}">
+	<option value="">Select a Movie/Show</option>
+	{{#each title}}
+	<option value="{{vm_id}}">{{vm_title}}</option>
+	{{/each}}
+	</select>
+
   <div class="WriteReview">
     
     <h3 id="review-write">Write a Review: </h3>
