@@ -157,35 +157,32 @@ VALUES ('It', 'Murderous clown dances funny', NULL, NULL, 'https://images-na.ssl
 
 --Insert data for Review:
 
-INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('New Girl? Boring girl!', 'This show had me falling asleep standing up. Zooey Deschanel? More like BOOey!', 9, 9);
+INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('New Girl? Boring girl!', 'This show had me falling asleep standing up. Zooey Deschanel? More like BOOey!', (SELECT vm_id FROM visual_media WHERE vm_title = 'New Girl'), (SELECT vm_id FROM visual_media WHERE vm_title = 'New Girl'));
 
-INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('Wish this was real life!', '20-somethings with great jobs and an incredible apartment in NYC...like that is real', 10, 10);
+INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('Wish this was real life!', '20-somethings with great jobs and an incredible apartment in NYC...like that is real', (SELECT vm_id FROM visual_media WHERE vm_title = 'Friends'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Friends'));
 
-INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('Post Malone Wrote This', 'Man I love paper like I am Michael Scott', 11, 11);
-
-INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('May the Force Be With You', 'Man, I wish they would make like 8 more of these!!', 4, 4);
+INSERT INTO review (review_title, review_body, vid, review_movie_tv) VALUES ('Post Malone Wrote This', 'Man I love paper like I am Michael Scott', (SELECT vm_id FROM visual_media WHERE vm_title = 'The Office'), (SELECT vm_id FROM visual_media WHERE vm_title = 'The Office'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('Got myself a new dance movie and catch phrase', 'Can you say "Hey you guyyyyyss" and do the truffle shuffle at the same time?', 3, 3);
+VALUES ('Got myself a new dance move and catch phrase', 'Can you say "Hey you guyyyyyss" and do the truffle shuffle at the same time?', (SELECT vm_id FROM visual_media WHERE vm_title = 'Goonies'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Goonies'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('Better than Ratatouille', 'There are only two cooking movies worth talking about and this one is top of the menu', 5, 5);
+VALUES ('Better than Ratatouille', 'There are only two cooking movies worth talking about and this one is top of the menu', (SELECT vm_id FROM visual_media WHERE vm_title = 'Chef'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Chef'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('10/10 Red Balloons', 'I wanna float too', 12, 12);
+VALUES ('10/10 Red Balloons', 'I wanna float too', (SELECT vm_id FROM visual_media WHERE vm_title = 'It'), (SELECT vm_id FROM visual_media WHERE vm_title = 'It'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('This movie SHORE is great', 'Did you SEA what I did there?', 8, 8);
+VALUES ('This movie SHORE is great', 'Did you SEA what I did there?', (SELECT vm_id FROM visual_media WHERE vm_title = 'Finding Nemo'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Finding Nemo'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('Not realistic', 'If only this could actually happen', 6, 6);
+VALUES ('Not realistic', 'If only this could actually happen', (SELECT vm_id FROM visual_media WHERE vm_title = 'Back to the Future'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Back to the Future'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('One of my faves!', 'I do not understand why anyone would not love this show', 9, 9);
+VALUES ('One of my faves!', 'I do not understand why anyone would not love this show', (SELECT vm_id FROM visual_media WHERE vm_title = 'New Girl'), (SELECT vm_id FROM visual_media WHERE vm_title = 'New Girl'));
 
 INSERT INTO review (review_title, review_body, vid, review_movie_tv)
-VALUES ('Worth the watch!', 'I really loved the plot of this movie!', 5, 5);
+VALUES ('Worth the watch!', 'I really loved the plot of this movie!', (SELECT vm_id FROM visual_media WHERE vm_title = 'Chef'), (SELECT vm_id FROM visual_media WHERE vm_title = 'Chef'));
 
 --Insert data for searches_for:
 
