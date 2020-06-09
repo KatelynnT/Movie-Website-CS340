@@ -15,7 +15,7 @@ function getReview(res, mysql, context, complete){
 
 
     function getSingleReview(res, mysql, context, id, complete){
-        var sql = "SELECT review_id as id, review_movie_tv, review_title, review_body FROM review WHERE review_id = ?";
+        var sql = "SELECT review_id as id, vid, review_title, review_body, visual_media.vm_title AS review_movie_tv FROM review INNER JOIN visual_media ON review.review_movie_tv = visual_media.vm_id WHERE review_id = ?";
         var inserts = [id];
         mysql.pool.query(sql, inserts, function(error, results, fields){
             if(error){
@@ -26,6 +26,18 @@ function getReview(res, mysql, context, complete){
             complete();
         });
     }
+
+function getMovieTitles(res, mysql, context, complete){
+        mysql.pool.query("SELECT vm_id, vm_title FROM visual_media", function(error, results, fields){
+            if(error){
+                res.write(JSON.stringify(error));
+                res.end();
+            }
+            context.title  = results;
+            complete();
+        });
+    }
+
 
 router.get('/', function(req, res){
         var callbackCount = 0;
@@ -47,9 +59,10 @@ router.get('/:id', function(req, res){
         context.jsscripts = [ "updatereview.js"];
         var mysql = req.app.get('mysql');
         getSingleReview(res, mysql, context, req.params.id, complete);
-        function complete(){
+	getMovieTitles(res, mysql, context, complete);     
+   function complete(){
             callbackCount++;
-            if(callbackCount >= 1){
+            if(callbackCount >= 2){
                 res.render('update-review', context);
             }
 
@@ -75,7 +88,7 @@ router.put('/:id', function(req, res){
     });
 
 function getReviewFromTitle(req, res, mysql, context, complete) {
-var query = "SELECT review_id as id, review_movie_tv, review_title, review_body FROM review  WHERE review.review_movie_tv LIKE " + mysql.pool.escape(req.params.s);
+var query = "SELECT review_id as id, vid, review_title, review_body, visual_media.vm_title AS review_movie_tv FROM review INNER JOIN visual_media ON review.review_movie_tv = visual_media.vm_id WHERE visual_media.vm_title LIKE " + mysql.pool.escape(req.params.s);
       console.log(query)
 
       mysql.pool.query(query, function(error, results, fields){

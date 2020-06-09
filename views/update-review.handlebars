@@ -16,7 +16,14 @@
 </div>
 <div class="Movie/Show">
 <h3 id="movie-show">Movie/TV Show: </h3>
-	<input type="text" name="review_movie_tv" id="post-media-field" class="post-form-field" value="{{userProfile.review_movie_tv}}">
+
+	<select name="review_movie_tv" id="post-media-field" class="post-form-field" pattern=".{1.}">
+        <option value="{{userProfile.vid}}">{{userProfile.review_movie_tv}}</option>
+        {{#each title}}
+        <option value="{{vm_id}}">{{vm_title}}</option>
+        {{/each}}
+        </select>
+
 </div>
 <div class="WriteReview">
 <h3 id="review-write">Write a Review: : </h3>
